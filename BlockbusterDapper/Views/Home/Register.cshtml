@@ -1,0 +1,44 @@
+﻿@model Movies
+
+<h3>Welcome to Blockbuster Video!</h3>
+
+@using (Html.BeginForm("Register", "Home", FormMethod.Post))
+{
+
+<div class="formBox">
+    <div>
+        <p>
+            Title:
+            @Html.TextBoxFor(m => m.Name)
+        </p>
+    </div>
+    <div>
+        <p>
+            @Html.LabelFor(m => m.Genre)
+            <select name="Genre">
+                <option value="Action">Action</option>
+                <option value="Comedy">Comedy</option>
+                <option value="Drama">Drama</option>
+                <option value="Horror">Horror</option>
+                <option value="Romance">Romance</option>
+                <option value="Sci-Fi">Sci-Fi</option>
+                <option value="Thriller">Thriller</option>
+            </select>
+        </p>
+    </div>
+    <div>
+        <p>
+            Year:
+            <input type="number" name="Year" id="Year" />
+        </p>
+    </div>
+    <div>
+        <p>
+            Runtime:
+            <input type="number" name="Runtime" id="Runtime" />
+        </p>
+    </div>
+</div>
+
+<input type="submit" name="submit" />
+}
